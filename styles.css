@@ -1,0 +1,13 @@
+body {
+text-align: center;
+
+}
+
+legend {
+    height: 40px;
+}
+
+main {
+    font-style: italic;
+    font-size: 18px;
+}
