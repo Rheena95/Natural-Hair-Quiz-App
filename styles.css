@@ -1,13 +1,63 @@
-body {
-text-align: center;
-
+body, html {
+    height: 100%;
 }
 
-legend {
-    height: 40px;
+.background {
+    background-image: url("https://www.byrdie.com/thmb/_f9jG3VVai_akdX_Dw4yxfdDBao=/1080x810/filters:fill(auto,1)/main-dc2047c21ee245a98c725eab103a3004.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
 }
 
 main {
     font-style: italic;
     font-size: 18px;
+}
+
+header {
+    position: relative;
+    margin-top: -39rem;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: -2px -2px #1a1919;
+    color: rgb(120, 177, 134);
+
+fieldset {
+    border: 1px solid black;
+    width: 40rem;
+    height: 29rem;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+legend{
+    color: rgb(120, 177, 134);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px #080808;
+}
+.startQuiz {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.images {
+    width: 85%;
+}
+
+.startBtn {
+    margin-top: 20px;
+}
+
+#start {
+    height: 35px;
+    width: 100px;
 }

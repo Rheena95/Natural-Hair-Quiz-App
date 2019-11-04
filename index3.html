@@ -9,23 +9,27 @@
     <link href="styles.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div class="background"></div>
     <header>
-          <h1>Natural Hair Quiz</h1> 
+          <h1>Natural Hair Quiz</h1>
     </header>
     <main class="main">
       <fieldset>
-        <div class="row">
-          <div class="col-12">
-            <legend>Natural Hair Care</legend>
-            <p>This quiz will test your natural hair knowledge on maintenance and care.</p>
-          </div>
-        </div>
-        <div class="begining">
-          <div class="startBtn">
-            <button type="button" id="start">Start Quiz</button>
-          </div>
-        </div>
+          <legend>Testing your natural hair knowledge on maintenance and care.</legend>
+          <section class="startQuiz">
+            <img src="https://www.byrdie.com/thmb/_f9jG3VVai_akdX_Dw4yxfdDBao=/1080x810/filters:fill(auto,1)/main-dc2047c21ee245a98c725eab103a3004.jpg" alt="hair products on a table" class="images">
+              <div class="startBtn">
+                <button type="button" id="start">Start Quiz</button>
+              </div>
+          </section>
+          <section class="questionBox box altBox">
+            </section>
+            <section class="response box altBox"></section>
+            <section class="final box altBox"></section>
       </fieldset>
     </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="index.js"></script>
   </body>
 </html>
