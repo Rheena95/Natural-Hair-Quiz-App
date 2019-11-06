@@ -24,6 +24,7 @@ header {
     font-size: 30px;
     text-shadow: -2px -2px #1a1919;
     color: rgb(120, 177, 134);
+}
 
 fieldset {
     border: 1px solid black;
