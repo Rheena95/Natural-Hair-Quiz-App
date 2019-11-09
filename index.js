@@ -74,38 +74,27 @@ function listeners() {
 
     $('form').submit(function(event){
         event.preventDefault(); // prevents page from refreshing
+        // get the selected answer
         STORE.currentView = "review";
+        $('.startQuiz').hide();
         $('button').hide();
+        $('.js-response').show();
         generateResponse();
+    });
+    
+    $('.js-response').on('click', '.nextButton', function (event) {
+        STORE.currentView = "quiz";
+        STORE.currentQuestion = questionUpdate();
+        $('button').hide();
+        renderQuestion();
     });
 }
 
-function generateResponse() {
-    // get the selected answer
-    let selectedRadio = $(“input:checked”);
-    let selected = selectedRadio.val(); // grabs the selected/submitted answer
-    
 
-    // check if answer is correct
-    let index = STORE.currentQuestion-1;
-    let correct = selected == quizQuestions[index].correctAnswer;
-    // write response to page
-    let content = '';
-    if(correct) {
-        content += 'Yay! You go girl!';
-    } else {
-        content += "Let's review! What we were looking for is highlighted";
-        selectedRadio.addClass(“rightAnswer”);// lets the person know the correct answer
-    };
-    
-
-
-    $('.js-response').html()
-    // create next button
-
-    
+function grade() {
+    score++;
+    $('.score').text(score);
 }
-
 
 function renderQuestion() {
     let generateHTML = getHTML();
@@ -114,8 +103,8 @@ function renderQuestion() {
 }
 
 function getHTML () {
-    let content = `<div>Question ${STORE.currentQuestion} of 5</div>`;
-
+    let content = `<div>Question ${STORE.currentQuestion} of 5</div>
+    <div>${STORE.score}</div>`;
     // add question element
     let index = STORE.currentQuestion-1; // this var stores the current question index
     content += `<h2>${quizQuestions[index].question}</h2>`;// adds the question in h2 to content
@@ -125,10 +114,45 @@ function getHTML () {
         content += `<input type="radio" name="answer" value="${answer}"> ${answer} <br>`; // this loops throw the answers and creats a radio button
     }
     // add submit button
-    content += "<button type='submit'>Submit</button>";
+    content += "<button type='submit' id='subButton'>Submit</button>";
     return content;
 }
 
+function generateResponse() {
+    let selectedRadio = $('input:checked');
+    let selected = selectedRadio.val(); // grabs the selected/submitted answer
+    let index = STORE.currentQuestion-1;
+    let correct = selected == quizQuestions[index].correctAnswer;
+    // write response to page
+    if(correct) {
+        correctAnswer();
+    } else {
+       wrongAnswer();
+    };
+}
+
+function correctAnswer() {
+    $('.js-response').html(
+      `<h1>Yay! You go naturalista!</h1>
+        <button type="button" class="nextButton js-nextButton">Next</button>`
+    );
+    grade();
+  }
+
+
+  function wrongAnswer() {
+    $('.js-response').html(
+      `<h3>Not quite! Let's review! What we were looking for was ...</h3>
+        <button type="button" class="nextButton js-nextButton">Next</button>`
+    );
+}
+  
+  function questionUpdate() {
+    currentQuestion++;
+  }
+
+
 $(function(){
     listeners();
+    questionUpdate();
 });
