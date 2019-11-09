@@ -76,25 +76,33 @@ function listeners() {
         event.preventDefault(); // prevents page from refreshing
         // get the selected answer
         STORE.currentView = "review";
-        $('.startQuiz').hide();
-        $('button').hide();
+        $('.questionBox').hide();
+        $('#subButton').hide();
         $('.js-response').show();
         generateResponse();
+        
     });
     
     $('.js-response').on('click', '.nextButton', function (event) {
         STORE.currentView = "quiz";
-        STORE.currentQuestion = questionUpdate();
-        $('button').hide();
+        $('.nextButton').hide();
+        $('.js-response').hide();
+        $('.questionBox').show();
+        $('#subButton').show();
+        questionUpdate();
         renderQuestion();
     });
 }
 
 
-function grade() {
-    score++;
-    $('.score').text(score);
-}
+$(function(){
+    const STORE = {
+      correct: 0,
+      current: 0
+    }
+    listeners();
+    questionUpdate();
+});
 
 function renderQuestion() {
     let generateHTML = getHTML();
@@ -136,7 +144,7 @@ function correctAnswer() {
       `<h1>Yay! You go naturalista!</h1>
         <button type="button" class="nextButton js-nextButton">Next</button>`
     );
-    grade();
+    correct++;
   }
 
 
@@ -148,7 +156,9 @@ function correctAnswer() {
 }
   
   function questionUpdate() {
-    currentQuestion++;
+    let currentQuestion =  `${quizQuestions[index].question}`;
+    STORE.currentQuestion++;
+    console.log("this works");
   }
 
 
