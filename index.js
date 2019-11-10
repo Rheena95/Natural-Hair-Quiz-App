@@ -151,8 +151,8 @@ function wrongAnswer() {
   
 function questionUpdate() {
     let index = STORE.currentQuestion-1;
-    let currentQuestion = `${quizQuestions.length}`;
-    if(STORE.currentQuestion <= currentQuestion) {
+    let quizLength = `${quizQuestions.length}`;
+    if(STORE.currentQuestion <= quizLength) {
     STORE.currentQuestion++;
     console.log("this works");
     } else {
