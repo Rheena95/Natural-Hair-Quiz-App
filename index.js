@@ -75,7 +75,7 @@ function listeners() {
         renderQuestion();
     });
 
-    $('.js-questions').submit(function(event){
+    $('form').submit(function(event){
         event.preventDefault(); // prevents page from refreshing
         STORE.currentView = "review"; // changes current view to review
         $('.js-response').show(); // shows reponse page
@@ -85,8 +85,8 @@ function listeners() {
     });
     
     $('.js-response').on('click', '.nextButton', function (event) {
-        STORE.currentQuestion === quizQuestions.length?
-        finalScore() :
+        //STORE.currentQuestion === quizQuestions.length?
+        //finalScore() :
         STORE.currentView = "quiz"; // changes view back to quiz after review page
         $('.js-response').hide(); // hides response page
         $('.js-questions').show(); // shows questions page 
@@ -110,7 +110,7 @@ function getHTML () {
     // add radio buttons
     for(let ind in quizQuestions[index].answers) {
         let answer = quizQuestions[index].answers[ind]; // returning the string of each answer
-        content += `<input type="radio" name="answer" value="${answer}"> ${answer} <br>`; // this loops throw the answers and creats a radio button
+        content += `<input type="radio" name="answer" value="${answer}" required> ${answer} <br>`; // this loops throw the answers and creats a radio button
     }
     // add submit button
     content += "<button type='submit' id='subButton'>Submit</button>";
@@ -133,7 +133,8 @@ function generateResponse() {
 function correctAnswer() {
     $('.js-response').html(
       `<h1>Yay! You go naturalista!</h1>
-        <button type="button" class="nextButton js-nextButton">Next</button>`
+      <img src="images/correct-answer.gif"/ class= "form-pic">
+      <button type="button" class="nextButton js-nextButton">Next</button>`
     );
     STORE.score++;
 }
@@ -142,49 +143,55 @@ function correctAnswer() {
 function wrongAnswer() {
     let index = STORE.currentQuestion-1;
     $('.js-response').html(
-      `<h3>Not quite! Let's review! What we were looking for was ...</h3>
+      `<img src="images/wrong-answer.gif"/ class= "form-pic">
+      <h3>Not quite! Let's review! What we were looking for was ...</h3>
       <h2>${quizQuestions[index].correctAnswer}</h2>
         <button type="button" class="nextButton js-nextButton">Next</button>`
     );
 }
   
 function questionUpdate() {
-    let index = STORE.currentQuestion-1;
-    let quizLength = `${quizQuestions.length}`;
-    if(STORE.currentQuestion <= quizLength) {
-    STORE.currentQuestion++;
-    console.log("this works");
-    } else {
-        $('.startQuiz').hide();
-        $('.js-questions').hide();
-        $('.js-repsonse').hide();
-        $('.js-final').show();
-        finalScore();
-    }
+  let index = STORE.currentQuestion;
+  let quizLength = `${quizQuestions.length}`;
+  console.log(index);
+  console.log(quizLength);
+  if(index < quizLength) {
+  STORE.currentQuestion++;
+  } else {
+      $('.startQuiz').hide();
+      $('.js-questions').hide();
+      $('.js-repsonse').hide();
+      $('.js-final').show();
+      finalScore();
+  }
 }
-
 
 function finalScore() {
     $('.startQuiz').hide();
+    $('.js-questions').hide();
     $('.js-final').show();
     $('.js-final').html(
-        `<h2>Your score is ${STORE.score}/${STORE.currentQuestion}</h2>
-        <h1>How did you do? Are you a natural hair expert?</h1>
+        `<h3>Your score is ${STORE.score}/${STORE.currentQuestion}</h3>
+        <h3>How did you do? Are you a natural hair expert?</h3>
+        <img src= "images/end-of-quiz.gif"/ alt="woman fluffing hair" class= "form-pic">
         <h3>Test your skills again!</h3>
         <button type="submit" class="restartButton button">Restart</button>`
     );
     $('.js-final').on('click', '.restartButton', function (event) {
       event.preventDefault();
       $('.js-final').hide();
-      $('form').show();
+      $('.js-questions').show();
+      renderQuestion();
       STORE.currentQuestion = 1
     });
     STORE.score = 0;
-    STORE.currentQuestion = 0;
+    STORE.currentQuestion = 1;
 }
 
 
-$(function renderQuiz(){
+function renderQuiz(){
     listeners();
-    questionUpdate();
-});
+}
+
+$(renderQuiz);
+

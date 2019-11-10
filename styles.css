@@ -24,6 +24,7 @@ header {
     font-size: 30px;
     text-shadow: -2px -2px #1a1919;
     color: rgb(120, 177, 134);
+    font-style: italic;
 }
 
 fieldset {
@@ -43,12 +44,23 @@ legend{
     text-shadow: 1px 1px #080808;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgba(75, 100, 88, 0.774);
+.quiz-form {
+    display: block;
+    position: relative;
+    background-color: rgba(75, 100, 88, 0.575);
 }
+
+.final,
+.response {
+    color: white;
+    text-shadow: 2px 1px #1b291f;
+}
+
+.questionBox {
+    color: black;
+    text-shadow: -1px 1px #428050;
+}
+
 .startQuiz {
     display: block;
     height: 100%;
@@ -57,15 +69,35 @@ form {
     text-align: center;
 }
 
-.images {
-    width: 85%;
-}
-
-.startBtn {
+button {
+    display: block;
+    width: 200px;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #928e8e;
+    border-radius: 3px;
+    background-color:  #4d6e58;;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background-color: #90c5a0;
+  }
+   
+
+.images {
+    width: 75%;
 }
 
-#start {
-    height: 35px;
-    width: 100px;
+.form-pic {
+    width: 50%;
+}
+
+.quiz-end {
+    margin-top: 10px;
 }
