@@ -173,7 +173,7 @@ function finalScore() {
     $('.js-final').html(
         `<h3>Your score is ${STORE.score}/${STORE.currentQuestion}</h3>
         <h3>How did you do? Are you a natural hair expert?</h3>
-        <img src= "images/end-of-quiz.gif"/ alt="woman fluffing hair" class= "form-pic">
+        <img src= "images/end-of-quiz.gif"/ alt="woman fluffing hair" class= "quiz-end form-pic">
         <h3>Test your skills again!</h3>
         <button type="submit" class="restartButton button">Restart</button>`
     );
