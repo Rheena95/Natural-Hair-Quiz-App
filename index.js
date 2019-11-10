@@ -68,30 +68,29 @@ function listeners() {
         //this function starts the quiz once 'start quiz' is clicked
         STORE.currentView = "quiz";
         STORE.currentQuestion = 1;
-        $('.startQuiz').hide();
-        $('.js-final').hide();
+        $('.js-questions').show(); // shows questions
+        $('.startQuiz').hide(); // hides start quiz page
+        $('.js-response').hide(); // hides reponse page
+        $('.js-final').hide(); // hides final page
         renderQuestion();
     });
 
-    $('form').submit(function(event){
+    $('.js-questions').submit(function(event){
         event.preventDefault(); // prevents page from refreshing
-        // get the selected answer
-        STORE.currentView = "review";
-        $('.js-questions').hide();
-        $('#subButton').hide();
-        $('.js-response').show();
+        STORE.currentView = "review"; // changes current view to review
+        $('.js-response').show(); // shows reponse page
+        $('.js-questions').hide(); // hides questions page
+        $('.js-final').hide(); // hides final page
         generateResponse();
-        
     });
     
     $('.js-response').on('click', '.nextButton', function (event) {
         STORE.currentQuestion === quizQuestions.length?
         finalScore() :
-        STORE.currentView = "quiz";
-        $('.nextButton').hide();
-        $('.js-response').hide();
-        $('.js-questions').show();
-        $('#subButton').show();
+        STORE.currentView = "quiz"; // changes view back to quiz after review page
+        $('.js-response').hide(); // hides response page
+        $('.js-questions').show(); // shows questions page 
+        $('.js-final').hide(); // hides final page
         questionUpdate();
         renderQuestion();
     });
@@ -99,7 +98,7 @@ function listeners() {
 
 function renderQuestion() {
     let generateHTML = getHTML();
-    $('form').html(generateHTML); // selecting form and replacing the HTML with the passed in value.
+    $('.questionBox').html(generateHTML); // selecting form and replacing the HTML with the passed in value.
 }
 
 function getHTML () {
@@ -166,20 +165,20 @@ function questionUpdate() {
 
 
 function finalScore() {
-    $('form').hide();
+    $('.startQuiz').hide();
     $('.js-final').show();
-    $('.js-final').on('click', '.restartButton', function (event) {
-        event.preventDefault();
-        $('.js-final').hide();
-        $('form').show();
-        STORE.currentQuestion = 1
-    });
     $('.js-final').html(
         `<h2>Your score is ${STORE.score}/${STORE.currentQuestion}</h2>
         <h1>How did you do? Are you a natural hair expert?</h1>
         <h3>Test your skills again!</h3>
         <button type="submit" class="restartButton button">Restart</button>`
-  );
+    );
+    $('.js-final').on('click', '.restartButton', function (event) {
+      event.preventDefault();
+      $('.js-final').hide();
+      $('form').show();
+      STORE.currentQuestion = 1
+    });
     STORE.score = 0;
     STORE.currentQuestion = 0;
 }

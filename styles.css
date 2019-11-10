@@ -29,7 +29,7 @@ header {
 fieldset {
     border: 1px solid black;
     width: 40rem;
-    height: 29rem;
+    height: 20rem;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -41,6 +41,13 @@ legend{
     font-size: 24px;
     font-weight: bold;
     text-shadow: 1px 1px #080808;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: rgba(75, 100, 88, 0.774);
 }
 .startQuiz {
     display: block;
