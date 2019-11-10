@@ -69,6 +69,7 @@ function listeners() {
         STORE.currentView = "quiz";
         STORE.currentQuestion = 1;
         $('.startQuiz').hide();
+        $('.js-final').hide();
         renderQuestion();
     });
 
@@ -76,7 +77,7 @@ function listeners() {
         event.preventDefault(); // prevents page from refreshing
         // get the selected answer
         STORE.currentView = "review";
-        $('.questionBox').hide();
+        $('.js-questions').hide();
         $('#subButton').hide();
         $('.js-response').show();
         generateResponse();
@@ -84,35 +85,26 @@ function listeners() {
     });
     
     $('.js-response').on('click', '.nextButton', function (event) {
+        STORE.currentQuestion === quizQuestions.length?
+        finalScore() :
         STORE.currentView = "quiz";
         $('.nextButton').hide();
         $('.js-response').hide();
-        $('.questionBox').show();
+        $('.js-questions').show();
         $('#subButton').show();
         questionUpdate();
         renderQuestion();
     });
 }
 
-
-$(function(){
-    const STORE = {
-      correct: 0,
-      current: 0
-    }
-    listeners();
-    questionUpdate();
-});
-
 function renderQuestion() {
     let generateHTML = getHTML();
     $('form').html(generateHTML); // selecting form and replacing the HTML with the passed in value.
-
 }
 
 function getHTML () {
     let content = `<div>Question ${STORE.currentQuestion} of 5</div>
-    <div>${STORE.score}</div>`;
+    <div>Score: ${STORE.score}</div>`;
     // add question element
     let index = STORE.currentQuestion-1; // this var stores the current question index
     content += `<h2>${quizQuestions[index].question}</h2>`;// adds the question in h2 to content
@@ -144,25 +136,56 @@ function correctAnswer() {
       `<h1>Yay! You go naturalista!</h1>
         <button type="button" class="nextButton js-nextButton">Next</button>`
     );
-    correct++;
-  }
+    STORE.score++;
+}
 
 
-  function wrongAnswer() {
+function wrongAnswer() {
+    let index = STORE.currentQuestion-1;
     $('.js-response').html(
       `<h3>Not quite! Let's review! What we were looking for was ...</h3>
+      <h2>${quizQuestions[index].correctAnswer}</h2>
         <button type="button" class="nextButton js-nextButton">Next</button>`
     );
 }
   
-  function questionUpdate() {
-    let currentQuestion =  `${quizQuestions[index].question}`;
+function questionUpdate() {
+    let index = STORE.currentQuestion-1;
+    let currentQuestion = `${quizQuestions.length}`;
+    if(STORE.currentQuestion <= currentQuestion) {
     STORE.currentQuestion++;
     console.log("this works");
-  }
+    } else {
+        $('.startQuiz').hide();
+        $('.js-questions').hide();
+        $('.js-repsonse').hide();
+        $('.js-final').show();
+        finalScore();
+    }
+}
 
 
-$(function(){
+function finalScore() {
+    $('form').hide();
+    $('.js-final').show();
+    $('.js-final').on('click', '.restartButton', function (event) {
+        event.preventDefault();
+        $('.js-final').hide();
+        $('form').show();
+        STORE.currentQuestion = 1
+    });
+    $('.js-final').html(
+        `<h2>Your score is ${STORE.score}/${STORE.currentQuestion}</h2>
+        <h1>How did you do? Are you a natural hair expert?</h1>
+        <h3>Test your skills again!</h3>
+        <button type="submit" class="restartButton button">Restart</button>`
+  );
+    STORE.score = 0;
+    STORE.currentQuestion = 0;
+}
+
+
+$(function renderQuiz(){
     listeners();
     questionUpdate();
 });
