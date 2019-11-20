@@ -85,8 +85,6 @@ function listeners() {
     });
     
     $('.js-response').on('click', '.nextButton', function (event) {
-        //STORE.currentQuestion === quizQuestions.length?
-        //finalScore() :
         STORE.currentView = "quiz"; // changes view back to quiz after review page
         $('.js-response').hide(); // hides response page
         $('.js-questions').show(); // shows questions page 
@@ -97,16 +95,31 @@ function listeners() {
 }
 
 function renderQuestion() {
-    let generateHTML = getHTML();
+    let generateHTML = getHTML(); 
     $('.questionBox').html(generateHTML); // selecting form and replacing the HTML with the passed in value.
+    quizTrack();
+}
+
+function quizTrack() {
+  // let index = STORE.currentQuestion;
+  // let quizLength = `${quizQuestions.length}`;
+  // if(quizLength > index) {
+  $('header').html(`<h1>Natural Hair Quiz</h1>
+  <h4>Testing your natural hair knowledge on maintenance and care.</h4>
+  <ul class='scores'>
+  <li>Question ${STORE.currentQuestion} of 5</li>
+  <li>Score: ${STORE.score}</li>
+  </ul>`);
+  // } else {
+  //   return $('header').html(`<h1>Natural Hair Quiz</h1>
+  //   <h4>Testing your natural hair knowledge on maintenance and care.</h4>`);  
+  // }
 }
 
 function getHTML () {
-    let content = `<div>Question ${STORE.currentQuestion} of 5</div>
-    <div>Score: ${STORE.score}</div>`;
-    // add question element
+    let content = '';
     let index = STORE.currentQuestion-1; // this var stores the current question index
-    content += `<h2>${quizQuestions[index].question}</h2>`;// adds the question in h2 to content
+    content += `<h2 class ="question">${quizQuestions[index].question}</h2>`;// adds the question in h2 to content
     // add radio buttons
     for(let ind in quizQuestions[index].answers) {
         let answer = quizQuestions[index].answers[ind]; // returning the string of each answer
@@ -165,6 +178,7 @@ function questionUpdate() {
       finalScore();
   }
 }
+
 
 function finalScore() {
     $('.startQuiz').hide();

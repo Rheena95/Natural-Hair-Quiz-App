@@ -12,6 +12,17 @@ body, html {
     filter: blur(8px);
 }
 
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 26px;
+    list-style: none;
+    color: rgb(95, 121, 156);
+    text-shadow: 1.5px 1px #080808;
+    font-weight: bold;
+}
+
 main {
     font-style: italic;
     font-size: 18px;
@@ -22,9 +33,9 @@ header {
     margin-top: -39rem;
     text-align: center;
     font-size: 30px;
-    text-shadow: -2px -2px #1a1919;
     color: rgb(120, 177, 134);
     font-style: italic;
+    text-shadow: 1.5px 1px #080808;
 }
 
 fieldset {
@@ -37,13 +48,6 @@ fieldset {
     text-align: center;
 }
 
-legend{
-    color: rgb(120, 177, 134);
-    font-size: 24px;
-    font-weight: bold;
-    text-shadow: 1px 1px #080808;
-}
-
 .quiz-form {
     display: block;
     position: relative;
@@ -52,13 +56,16 @@ legend{
 
 .final,
 .response {
-    color: white;
-    text-shadow: 2px 1px #1b291f;
+    color:rgb(221, 241, 146);
+    text-shadow: -2px 1px #070501;
+    font-size: 22px;
 }
 
 .questionBox {
-    color: black;
-    text-shadow: -1px 1px #428050;
+    color: rgb(221, 241, 146);
+    text-shadow: -2px 1px #070501;
+    font-size: 26px;
+    margin-top: -10px;
 }
 
 .startQuiz {
@@ -94,10 +101,152 @@ button {
     width: 75%;
 }
 
+
+
 .form-pic {
     width: 50%;
 }
 
 .quiz-end {
     margin-top: 10px;
+}
+
+.nextButton,
+.restartButton {
+    margin-top: -10px;
+}
+
+
+@media screen and (min-width: 300px) {
+
+    .question {
+        font-size: 28px;
+    }
+
+    .background {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }  
+
+    header {
+        position: relative;
+        text-align: center;
+        margin-top: -38rem;
+        font-size: 22px;
+    }
+
+    fieldset {
+        border: 1px solid black;
+        width: 25rem;
+        height: 15rem;
+        /* position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; */
+    }
+    
+    .final,
+    .response {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .questionBox {
+        font-size: 24px;
+        margin-top: -10px;
+    }
+
+
+    .images {
+        /* margin-left: auto;
+        margin-right: auto; */
+        width: 80%;
+    }
+
+
+
+    .form-pic {
+        width: 70%;
+    }
+
+    .quiz-end {
+        margin-top: 10px;
+    }
+
+    .nextButton,
+    .restartButton {
+        margin-top: 20px;
+    }
+}
+  
+@media screen and (min-width: 750px) {
+
+    .question {
+        font-size: 32px;
+    }
+
+    .background {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+    }  
+
+    header {
+        position: relative;
+        text-align: center;
+        margin-top: -55rem;
+        font-size: 28px;
+    }
+
+    fieldset {
+        border: 1px solid black;
+        width: 30rem;
+        height: 20rem;
+        /* position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; */
+    }
+    
+    .final,
+    .response {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .questionBox {
+        font-size: 24px;
+        margin-top: -10px;
+    }
+
+
+    .images {
+        width: 80%;
+    }
+
+
+
+    .form-pic {
+        width: 70%;
+    }
+
+    .quiz-end {
+        margin-top: 10px;
+    }
+
+    .nextButton,
+    .restartButton {
+        margin-top: 25px;
+    }
+}
+
+  
+@media screen and (min-width: 1020px) {
+    /* main {
+      display: flex;
+      flex-direction: column;
+    } */
 }
