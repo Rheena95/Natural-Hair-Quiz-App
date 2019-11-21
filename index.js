@@ -196,10 +196,10 @@ function finalScore() {
       $('.js-final').hide();
       $('.js-questions').show();
       renderQuestion();
-      STORE.currentQuestion = 1
+      STORE.currentQuestion = 1;
     });
     STORE.score = 0;
-    STORE.currentQuestion = 1;
+    STORE.currentQuestion = 0;
 }
 
 
