@@ -101,19 +101,12 @@ function renderQuestion() {
 }
 
 function quizTrack() {
-  // let index = STORE.currentQuestion;
-  // let quizLength = `${quizQuestions.length}`;
-  // if(quizLength > index) {
   $('header').html(`<h1>Natural Hair Quiz</h1>
   <h4>Testing your natural hair knowledge on maintenance and care.</h4>
   <ul class='scores'>
   <li>Question ${STORE.currentQuestion} of 5</li>
   <li>Score: ${STORE.score}</li>
   </ul>`);
-  // } else {
-  //   return $('header').html(`<h1>Natural Hair Quiz</h1>
-  //   <h4>Testing your natural hair knowledge on maintenance and care.</h4>`);  
-  // }
 }
 
 function getHTML () {
@@ -146,7 +139,7 @@ function generateResponse() {
 function correctAnswer() {
     $('.js-response').html(
       `<h1>Yay! You go naturalista!</h1>
-      <img src="images/correct-answer.gif"/ class= "form-pic">
+      <img src="images/correct-answer.gif"/ class= "form-pic correctPic">
       <button type="button" class="nextButton js-nextButton">Next</button>`
     );
     STORE.score++;
@@ -173,7 +166,8 @@ function questionUpdate() {
   } else {
       $('.startQuiz').hide();
       $('.js-questions').hide();
-      $('.js-repsonse').hide();
+      $('.scores').remove();
+      $('.js-response').hide();
       $('.js-final').show();
       finalScore();
   }
@@ -192,11 +186,12 @@ function finalScore() {
         <button type="submit" class="restartButton button">Restart</button>`
     );
     $('.js-final').on('click', '.restartButton', function (event) {
-      event.preventDefault();
-      $('.js-final').hide();
-      $('.js-questions').show();
-      renderQuestion();
-      STORE.currentQuestion = 1;
+      // event.preventDefault();
+      // $('.js-final').hide();
+      // $('.js-questions').show();
+      // renderQuestion();
+      // STORE.currentQuestion = 1;
+      window.location.reload();
     });
     STORE.score = 0;
     STORE.currentQuestion = 0;
