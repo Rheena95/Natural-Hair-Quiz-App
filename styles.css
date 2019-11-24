@@ -119,19 +119,22 @@ button {
 
 @media screen and (min-width: 300px) {
 
+    main {
+        margin-right: -15px;
+        margin: 0;
+    }
+
     .question {
-        font-size: 28px;
+        font-size: 24px;
     }
 
     .background {
         height: 100%;
-        width: 120%;
-        margin-top:-3rem;
-        margin: 0;
+        width: 110%;
     } 
 
     .scores {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     header {
@@ -145,7 +148,7 @@ button {
     fieldset {
         border: 1px solid black;
         width: 20rem;
-        height: 14rem;
+        height: 13rem;
         margin-top:-15px;
     }
     
@@ -155,22 +158,25 @@ button {
     }
     .response {
         margin-top: 10px;
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .questionBox {
-        font-size: 24px;
+        font-size: 22px;
         margin-top: -10px;
     }
 
     .quiz-form {
-        width: 120%;
+        width: 110%;
     }
 
     .images {
         width: 80%;
     }
 
+    #subButton {
+        width: 40%;
+    }
 
     .form-pic {
         width: 70%;
@@ -182,12 +188,11 @@ button {
 
     .nextButton,
     .restartButton {
-        margin-top: 20px;
+        width: 35%;
     }
 }
   
 @media screen and (min-width: 750px) {
-
     main {
         margin-right: -15px;
         margin: 0;
@@ -200,32 +205,32 @@ button {
 
     .scores {
         margin-top: -25px;
-        font-size: 26px;
+        font-size: 24px;
     }
 
     .background {
-        margin-top:-8rem;
+        margin-top: 0;
     }  
 
     header {
         text-align: center;
-        margin-top: -59rem;
-        font-size: 28px;
+        margin-top: -37rem;
+        font-size: 26px;
     }
     
 
     fieldset {
         margin-top: -15px;
-        width: 35rem;
-        height: 20rem;
+        width: 34rem;
+        height: 16rem;
     }
     
     .final {
         font-size: 20px;
     }
     .response {
-        margin-top: -25px;
-        font-size: 20px;
+        margin-top:-20px;
+        font-size: 18px;
     }
 
     .questionBox {
@@ -235,13 +240,13 @@ button {
 
 
     .images {
-        width: 85%;
+        width: 82%;
     }
 
 
     .form-pic {
         margin-top: 28px;
-        width: 65%;
+        width: 64%;
     }
 
     .quiz-end {
@@ -253,7 +258,8 @@ button {
     }
     
     .nextButton {
-        margin-top: 0px;
+        width: 30%;
+        margin-top:-20px;
     }
 
     .restartButton {
