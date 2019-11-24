@@ -124,26 +124,27 @@ button {
     }
 
     .background {
-        height: 110%;
-        width: 110%;
+        height: 100%;
+        width: 120%;
         margin-top:-3rem;
+        margin: 0;
     } 
 
     .scores {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     header {
         position: relative;
         text-align: center;
-        margin-top: -40rem;
-        font-size: 22px;
+        margin-top: -36rem;
+        font-size: 20px;
 
     }
 
     fieldset {
         border: 1px solid black;
-        width: 22rem;
+        width: 20rem;
         height: 14rem;
         margin-top:-15px;
     }
@@ -163,7 +164,7 @@ button {
     }
 
     .quiz-form {
-        width: 110%;
+        width: 120%;
     }
 
     .images {
