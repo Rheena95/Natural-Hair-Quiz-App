@@ -1,13 +1,19 @@
 body, html {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .background {
-    background-image: url("https://www.byrdie.com/thmb/_f9jG3VVai_akdX_Dw4yxfdDBao=/1080x810/filters:fill(auto,1)/main-dc2047c21ee245a98c725eab103a3004.jpg");
-    background-position: center;
+    background-image: url(/images/Naturalhair1.jpg);
+    background-position: center center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
+    height: 0;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     -webkit-filter: blur(8px);
     filter: blur(8px);
 }
@@ -30,9 +36,9 @@ main {
 
 header {
     position: relative;
-    margin-top: -39rem;
+    margin-top: -34rem;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
     color: rgb(120, 177, 134);
     font-style: italic;
     text-shadow: 1.5px 1px #080808;
@@ -40,13 +46,17 @@ header {
 
 fieldset {
     border: 1px solid black;
-    width: 40rem;
-    height: 20rem;
+    width: 15rem;
+    height: 15rem;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
+
+.scores {
+    font-size: 20px;
+    }
 
 .quiz-form {
     display: block;
@@ -58,13 +68,13 @@ fieldset {
 .response {
     color:rgb(221, 241, 146);
     text-shadow: -2px 1px #070501;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 .questionBox {
     color: rgb(221, 241, 146);
     text-shadow: -2px 1px #070501;
-    font-size: 26px;
+    font-size: 18px;
     margin-top: -10px;
 }
 
@@ -78,9 +88,9 @@ fieldset {
 
 button {
     display: block;
-    width: 200px;
+    width: 100px;
     height: auto;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     padding: 20px;
     border: 2px solid #928e8e;
@@ -98,13 +108,13 @@ button {
    
 
 .images {
-    width: 75%;
+    width: 275px;
 }
 
 
 
 .form-pic {
-    width: 50%;
+    width: 100%;
 }
 
 .quiz-end {
@@ -113,11 +123,11 @@ button {
 
 .nextButton,
 .restartButton {
-    margin-top: -10px;
+    margin-top: 10px;
 }
 
 
-@media screen and (min-width: 300px) {
+/* @media screen and (min-width: 300px) {
 
     main {
         margin-right: -15px;
@@ -191,45 +201,45 @@ button {
         width: 35%;
     }
 }
-  
-@media screen and (min-width: 750px) {
-    main {
-        margin-right: -15px;
-        margin: 0;
-      }
 
+ */
+
+ @media screen and (min-width: 750px) {
+ 
     .question {
         margin-top: 20px;
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .scores {
         margin-top: -25px;
-        font-size: 24px;
-    }
-
-    .background {
-        margin-top: 0;
+        font-size: 26px;
     }  
 
     header {
+        margin-top: -570px;
         text-align: center;
-        margin-top: -37rem;
         font-size: 26px;
     }
+
+    button {
+        width: 150px;
+        margin-top: 5px;
+        font-size: 14px;
+  }
     
 
     fieldset {
         margin-top: -15px;
-        width: 34rem;
-        height: 16rem;
+        width: 500px;
+        height: 275px;
     }
     
     .final {
         font-size: 20px;
     }
     .response {
-        margin-top:-20px;
+        margin-top:11px;
         font-size: 18px;
     }
 
@@ -240,26 +250,28 @@ button {
 
 
     .images {
-        width: 82%;
+        width: 80%;
+    }
+
+    .final {
+        margin-top: -20px;
     }
 
 
     .form-pic {
-        margin-top: 28px;
+        margin-top: -10px;
         width: 64%;
     }
 
-    .quiz-end {
-        margin-top: 10px;
-    }
-
     #subButton {
-        margin-top: 40px;
+        font-size: 14px;
+        margin-top: 50px;
+        width: 24%;
     }
     
     .nextButton {
         width: 30%;
-        margin-top:-20px;
+        margin-top:20px;
     }
 
     .restartButton {
@@ -267,14 +279,11 @@ button {
     }
 }
 
-  
 @media screen and (min-width: 1020px) {
-    /* main {
-      margin: 0;
-    } */
+    
 
     .question {
-        font-size: 37px;
+        font-size: 38px;
     }
 
 
@@ -284,57 +293,67 @@ button {
      } 
 
      .scores {
-        font-size: 32px;
+        font-size: 34px;
     }
 
     header {
-        margin-top: -52rem;
-        font-size: 38px;
+        margin-top: -750px;
+        font-size: 36px;
     }
 
     fieldset {
         border: 1px solid black;
-        width: 50rem;
-        height: 20rem;
+        width: 60%;
+        height: 370px;
+    }
+
+    #start {
+        margin-top: 30px;
+        font-size: 20px;
+        width: 18%;
+
     }
     
     .final,
     .response {
         margin-top: -15px;
-        font-size: 24px;
+        font-size: 26px;
     }
 
     .questionBox {
-        font-size: 32px;
+        font-size: 35px;
         margin-top: 28px;
     }
 
 
     .images {
-        width: 75%;
+        width: 60%;
     }
 
      #subButton {
+        font-size: 20px;
         margin-top: 55px;
     }
 
     .form-pic {
-        width: 55%;
+        width: 60%;
+        margin-top: 20px;
     }
 
     .correctPic {
-        width: 55%;
+        width: 60%;
         margin-top: -15px;
     }
 
     .quiz-end {
         margin-top: 10px;
+        width: 55%;
     }
 
     .nextButton,
     .restartButton {
-        margin-top: 20px;
+        font-size: 20px;
+        margin-top: 10px;
+        width: 20%;
     }
 }
-
-
