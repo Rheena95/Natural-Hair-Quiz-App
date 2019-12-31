@@ -4,18 +4,25 @@ body, html {
     padding: 0;
 }
 
-.background {
-    background-image: url(images/Naturalhair1.jpg);
+body {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.151), rgba(255, 255, 255, 0.253)), url('images/Naturalhair1.jpg');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 0;
+    height: 100%;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    -webkit-filter: blur(8px);
-    filter: blur(8px);
+    /* -webkit-filter: blur(8px);
+    filter: blur(8px); */
+    padding: 18px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 ul {
@@ -24,7 +31,7 @@ ul {
     justify-content: space-around;
     font-size: 26px;
     list-style: none;
-    color: rgb(95, 121, 156);
+    color: rgb(143, 103, 235);
     text-shadow: 1.5px 1px #080808;
     font-weight: bold;
 }
@@ -35,20 +42,20 @@ main {
 }
 
 header {
-    position: relative;
-    margin-top: -34rem;
+    /* position: relative;
+    margin-top: 30px; */
     text-align: center;
     font-size: 20px;
-    color: rgb(120, 177, 134);
+    color: rgb(221, 241, 146);
     font-style: italic;
-    text-shadow: 1.5px 1px #080808;
+    text-shadow: 2px 2px #000000;
 }
 
 fieldset {
     border: 1px solid black;
     width: 15rem;
     height: 15rem;
-    position: relative;
+    /* position: relative; */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -61,13 +68,13 @@ fieldset {
 .quiz-form {
     display: block;
     position: relative;
-    background-color: rgba(75, 100, 88, 0.575);
+    background-color: rgba(69, 104, 87, 0.795);
 }
 
 .final,
 .response {
     color:rgb(221, 241, 146);
-    text-shadow: -2px 1px #070501;
+    text-shadow: -3px 1px #070501;
     font-size: 16px;
 }
 
@@ -127,83 +134,6 @@ button {
 }
 
 
-/* @media screen and (min-width: 300px) {
-
-    main {
-        margin-right: -15px;
-        margin: 0;
-    }
-
-    .question {
-        font-size: 24px;
-    }
-
-    .background {
-        height: 100%;
-        width: 110%;
-    } 
-
-    .scores {
-        font-size: 18px;
-    }
-
-    header {
-        position: relative;
-        text-align: center;
-        margin-top: -36rem;
-        font-size: 20px;
-
-    }
-
-    fieldset {
-        border: 1px solid black;
-        width: 20rem;
-        height: 13rem;
-        margin-top:-15px;
-    }
-    
-    .final {
-        margin-top: -20px;
-        font-size: 18px;
-    }
-    .response {
-        margin-top: 10px;
-        font-size: 17px;
-    }
-
-    .questionBox {
-        font-size: 22px;
-        margin-top: -10px;
-    }
-
-    .quiz-form {
-        width: 110%;
-    }
-
-    .images {
-        width: 80%;
-    }
-
-    #subButton {
-        width: 40%;
-    }
-
-    .form-pic {
-        width: 70%;
-    }
-
-    .quiz-end {
-        margin-top: 10px;
-    }
-
-    .nextButton,
-    .restartButton {
-        width: 35%;
-    }
-}
-
- */
-
  @media screen and (min-width: 750px) {
  
     .question {
@@ -212,12 +142,12 @@ button {
     }
 
     .scores {
-        margin-top: -25px;
+        /* margin-top: -25px; */
         font-size: 26px;
     }  
 
     header {
-        margin-top: -570px;
+        /* margin-top: -570px; */
         text-align: center;
         font-size: 26px;
     }
@@ -230,7 +160,7 @@ button {
     
 
     fieldset {
-        margin-top: -15px;
+        /* margin-top: -15px; */
         width: 500px;
         height: 275px;
     }
@@ -245,7 +175,7 @@ button {
 
     .questionBox {
         font-size: 28px;
-        margin-top: -5px;
+        /* margin-top: -5px; */
     }
 
 
@@ -253,13 +183,13 @@ button {
         width: 80%;
     }
 
-    .final {
+    /* .final {
         margin-top: -20px;
-    }
+    } */
 
 
     .form-pic {
-        margin-top: -10px;
+        /* margin-top: -10px; */
         width: 64%;
     }
 
@@ -274,9 +204,9 @@ button {
         margin-top:20px;
     }
 
-    .restartButton {
+    /* .restartButton {
         margin-top: -20px;
-    }
+    } */
 }
 
 @media screen and (min-width: 1020px) {
@@ -286,18 +216,12 @@ button {
         font-size: 38px;
     }
 
-
-    .background {
-        margin-top: -10px;
-        height: 110%;
-     } 
-
-     .scores {
+    .scores {
         font-size: 34px;
     }
 
     header {
-        margin-top: -750px;
+        /* margin-top: -750px; */
         font-size: 36px;
     }
 
@@ -316,7 +240,7 @@ button {
     
     .final,
     .response {
-        margin-top: -15px;
+        /* margin-top: -15px; */
         font-size: 26px;
     }
 
