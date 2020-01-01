@@ -14,15 +14,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    /* -webkit-filter: blur(8px);
-    filter: blur(8px); */
     padding: 18px;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 ul {
@@ -240,7 +232,7 @@ button {
     
     .final,
     .response {
-        /* margin-top: -15px; */
+        margin-top: 0;
         font-size: 26px;
     }
 
@@ -248,7 +240,6 @@ button {
         font-size: 35px;
         margin-top: 28px;
     }
-
 
     .images {
         width: 60%;
@@ -266,11 +257,11 @@ button {
 
     .correctPic {
         width: 60%;
-        margin-top: -15px;
+        margin-top: 0;
     }
 
     .quiz-end {
-        margin-top: 10px;
+        margin-top: 0px;
         width: 55%;
     }
 
